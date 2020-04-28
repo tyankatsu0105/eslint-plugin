@@ -16,7 +16,8 @@
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build": "tsc --project ./tsconfig.production.json"
   },
   "lint-staged": {
     "*.md": [
