@@ -6,5 +6,10 @@ module.exports = {
   extends: [
     "plugin:@mysticatea/es2018",
     "plugin:@mysticatea/+eslint-plugin" 
-  ]
+  ],
+  rules: {
+    "@mysticatea/prettier": ['error', {
+      tabWidth: 2,
+    }]
+  }
 }

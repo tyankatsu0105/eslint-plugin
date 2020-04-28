@@ -6,6 +6,14 @@ Create ESLint rules with TypeScript
 npm i -D @tyankatsu0105/eslint-with-typescript
 ```
 
+# development
+
+## Branches
+
+- master => Release branch
+- develop => Development branch (default)
+- topic branches => From develop branch
+
 # Inspired by these
 
 - https://github.com/future-architect/eslint-plugin-vue-scoped-css
