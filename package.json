@@ -1,0 +1,51 @@
+{
+  "name": "@tyankatsu0105/eslint-with-typescript",
+  "version": "0.0.0",
+  "description": "ESLint rules with typescript",
+  "keywords": [],
+  "homepage": "https://github.com/tyankatsu0105/eslint-with-typescript#readme",
+  "bugs": {
+    "url": "https://github.com/tyankatsu0105/eslint-with-typescript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyankatsu0105/eslint-with-typescript.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "commit": "git-cz"
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@mysticatea/eslint-plugin": "^13.0.0",
+    "@types/eslint": "^6.8.0",
+    "@types/estree": "0.0.44",
+    "@types/mocha": "^7.0.2",
+    "commitizen": "^4.0.4",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "lint-staged": "^10.1.7",
+    "mocha": "^7.1.2",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": "^10.13.0 || ^12.13.0 || >=14.0.0"
+  }
+}
