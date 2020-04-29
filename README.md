@@ -1,9 +1,9 @@
-# @tyankatsu0105/eslint-plugin-with-typescript
+# @tyankatsu0105/eslint-plugin
 
 Create ESLint rules with TypeScript
 
 ```bash
-npm i -D @tyankatsu0105/eslint-plugin-with-typescript
+npm i -D @tyankatsu0105/eslint-plugin
 ```
 
 # development
@@ -46,4 +46,4 @@ module.exports = {
 
 # LICENSE (MIT)
 
-See [LICENSE](https://github.com/tyankatsu0105/eslint-plugin-with-typescript/blob/develop/LICENSE)
+See [LICENSE](https://github.com/tyankatsu0105/eslint-plugin/blob/develop/LICENSE)
