@@ -4,7 +4,7 @@ const rule: Rule.RuleModule = {
   meta: {
     docs: {
       url:
-        "https://github.com/tyankatsu/eslint-plugin/blob/master/docs/rules/no-hoge.md",
+        "https://github.com/tyankatsu0105/eslint-plugin/blob/master/docs/rules/no-hoge.md",
       description: "'hoge' cannot be used in variable name",
     },
     fixable: "code",
