@@ -1,15 +1,15 @@
 {
-  "name": "@tyankatsu0105/eslint-plugin-with-typescript",
+  "name": "@tyankatsu0105/eslint-plugin",
   "version": "0.0.3",
   "description": "ESLint rules with typescript",
   "keywords": [],
-  "homepage": "https://github.com/tyankatsu0105/eslint-plugin-with-typescript#readme",
+  "homepage": "https://github.com/tyankatsu0105/eslint-plugin#readme",
   "bugs": {
-    "url": "https://github.com/tyankatsu0105/eslint-plugin-with-typescript/issues"
+    "url": "https://github.com/tyankatsu0105/eslint-plugin/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tyankatsu0105/eslint-plugin-with-typescript.git"
+    "url": "git+https://github.com/tyankatsu0105/eslint-plugin.git"
   },
   "license": "MIT",
   "author": "",
