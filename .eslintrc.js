@@ -10,6 +10,16 @@ module.exports = {
   rules: {
     "@mysticatea/prettier": ['error', {
       tabWidth: 2,
-    }]
-  }
+    }],
+  },
+  overrides: [
+    {
+      files: "*.ts",
+      rules: {
+        // module.exports require使う必要があるため
+        "@mysticatea/ts/no-require-imports": "off",
+        "@mysticatea/ts/no-var-requires": "off",
+      }
+    }
+  ]
 }

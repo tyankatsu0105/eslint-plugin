@@ -23,7 +23,8 @@
     "commit": "git-cz",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
-    "test": "mocha --require ts-node/register \"tests/**/*.ts\""
+    "test": "mocha --require ts-node/register \"tests/**/*.ts\"",
+    "playground": "eslint ./sandbox/index.js  --rulesdir dist/rules"
   },
   "lint-staged": {
     "*.md": [
