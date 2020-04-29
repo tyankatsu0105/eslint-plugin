@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "author": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
