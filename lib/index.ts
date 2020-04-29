@@ -1,5 +1,5 @@
-module.exports = {
-  rules: {
-    "no-hoge": require("./rules/no-hoge"),
-  },
+import { rules } from "./rules";
+
+export = {
+  rules,
 };
