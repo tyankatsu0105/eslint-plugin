@@ -2,6 +2,11 @@ import { Rule } from "eslint";
 
 const rule: Rule.RuleModule = {
   meta: {
+    docs: {
+      url:
+        "https://github.com/tyankatsu/eslint-plugin/blob/master/docs/rules/no-hoge.md",
+      description: "'hoge' cannot be used in variable name",
+    },
     fixable: "code",
     type: "problem",
   },
