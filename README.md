@@ -2,19 +2,32 @@
 
 Create ESLint rules with TypeScript
 
+## Usage
+
 ```bash
 npm i -D @tyankatsu0105/eslint-plugin
 ```
 
-# development
+```js
+module.exports = {
+  plugins: ["@tyankatsu0105"],
+  rules: {
+    "@tyankatsu0105/no-hoge": 2,
+  },
+};
+```
 
-## Branches
+> If you want to know about how to use scoped ESLint plugin, see: https://github.com/eslint/eslint/issues/9903
+
+## development
+
+### Branches
 
 - master => Release branch
 - develop => Development branch (default)
 - topic branches => From develop branch
 
-## playground
+### playground
 
 If you want to check eslint error, make these files in the `sandbox` dir.
 
@@ -40,10 +53,10 @@ module.exports = {
 };
 ```
 
-# Inspired by these
+## Inspired by these
 
 - https://github.com/future-architect/eslint-plugin-vue-scoped-css
 
-# LICENSE (MIT)
+## LICENSE (MIT)
 
 See [LICENSE](https://github.com/tyankatsu0105/eslint-plugin/blob/develop/LICENSE)
