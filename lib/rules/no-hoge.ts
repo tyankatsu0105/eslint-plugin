@@ -9,6 +9,9 @@ const rule: Rule.RuleModule = {
     },
     fixable: "code",
     type: "problem",
+    messages: {
+      noHoge: "🤖piyoニシテクダサイ",
+    },
   },
   create(context) {
     return {
@@ -23,7 +26,7 @@ const rule: Rule.RuleModule = {
           context.report({
             node,
             loc: node.loc,
-            message: "🤖piyoニシテクダサイ",
+            messageId: "noHoge",
             fix(fixer) {
               return fixer.replaceText(node, "piyo");
             },
@@ -34,4 +37,4 @@ const rule: Rule.RuleModule = {
   },
 };
 
-module.exports = rule;
+export = rule;

@@ -11,6 +11,7 @@ module.exports = {
     "@mysticatea/prettier": ['error', {
       tabWidth: 2,
     }],
+    "func-style": ['error', "expression"]
   },
   overrides: [
     {

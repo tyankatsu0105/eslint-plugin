@@ -1,11 +1,12 @@
 import { RuleTester } from "eslint";
 
-const rule = require("../../../lib/rules/no-hoge");
+import rule from "../../../lib/rules/no-hoge";
 
 const tester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2018,
   },
+  parser: require.resolve("espree"),
 });
 
 tester.run("no-hoge", rule, {
@@ -14,7 +15,7 @@ tester.run("no-hoge", rule, {
     {
       code: "const hoge = 'piyo';",
       output: "const piyo = 'piyo';",
-      errors: ["🤖piyoニシテクダサイ"],
+      errors: [{ messageId: "noHoge" }],
     },
   ],
 });
