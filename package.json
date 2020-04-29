@@ -56,5 +56,9 @@
   },
   "engines": {
     "node": "^10.13.0 || ^12.13.0 || >=14.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/experimental-utils": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0"
   }
 }
