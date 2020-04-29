@@ -1,4 +1,5 @@
-const hoge = 1;
-const fuga = {
-  name: "a",
+const lib = {
+  "no-hoge": require("./rules/no-hoge"),
 };
+
+module.exports = lib;

@@ -14,12 +14,17 @@
   "license": "MIT",
   "author": "",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc --project ./tsconfig.production.json",
     "precommit": "lint-staged",
     "commit": "git-cz",
     "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs trigger"
+    "release:trigger": "shipjs trigger",
+    "test": "mocha --require ts-node/register \"tests/**/*.ts\"",
+    "playground": "eslint ./sandbox/index.js  --rulesdir dist/rules"
   },
   "lint-staged": {
     "*.md": [
