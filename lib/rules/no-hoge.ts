@@ -4,7 +4,7 @@ const rule: Rule.RuleModule = {
   meta: {
     docs: {
       url:
-        "https://github.com/tyankatsu0105/eslint-with-typescript/blob/v0.0.0/docs/rules/no-hoge.ts.md",
+        "https://github.com/tyankatsu0105/eslint-plugin-with-typescript/blob/v0.0.0/docs/rules/no-hoge.ts.md",
     },
     fixable: "code",
     type: "problem",
