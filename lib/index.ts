@@ -1,5 +1,7 @@
+import { createLibIndex } from "./util";
+
 import { rules } from "./rules";
 
-export = {
+export = createLibIndex({
   rules,
-};
+});

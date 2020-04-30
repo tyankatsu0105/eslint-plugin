@@ -1,11 +1,12 @@
-import { Rule } from "eslint";
+import { createRule } from "../util";
 
-const rule: Rule.RuleModule = {
+export = createRule({
+  name: "prefer-function-component-type",
   meta: {
     docs: {
-      url:
-        "https://github.com/tyankatsu0105/eslint-plugin/blob/master/docs/rules/prefer-function-component-type.md",
       description: "",
+      category: "Best Practices",
+      recommended: false,
     },
     fixable: "code",
     type: "suggestion",
@@ -13,7 +14,9 @@ const rule: Rule.RuleModule = {
       preferFunctionComponentType:
         "Prefer using React.FC instead of FunctionComponent",
     },
+    schema: [],
   },
+  defaultOptions: [],
   create(context) {
     return {
       Identifier(node) {
@@ -27,7 +30,7 @@ const rule: Rule.RuleModule = {
           context.report({
             node,
             loc: node.loc,
-            messageId: "noHoge",
+            messageId: "preferFunctionComponentType",
             fix(fixer) {
               return fixer.replaceText(node, "piyo");
             },
@@ -36,6 +39,4 @@ const rule: Rule.RuleModule = {
       },
     };
   },
-};
-
-export = rule;
+});
