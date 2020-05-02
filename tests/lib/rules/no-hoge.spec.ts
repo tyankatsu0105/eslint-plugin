@@ -1,4 +1,4 @@
-import { RuleTester } from "eslint";
+import { RuleTester, resolveParser } from "../../RuleTester";
 
 import rule from "../../../lib/rules/no-hoge";
 
@@ -6,7 +6,7 @@ const tester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2018,
   },
-  parser: require.resolve("espree"),
+  parser: resolveParser("espree"),
 });
 
 tester.run("no-hoge", rule, {

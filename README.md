@@ -39,16 +39,28 @@ If you want to check eslint error, make these files in the `sandbox` dir.
 const hoge = "aaa";
 ```
 
+```ts
+// index.tsx
+
+import * as React, { FunctionComponent } from "react";
+
+export const App: FunctionComponent = () => <div>aaa</div>;
+```
+
 ```js
 // .eslintrc.js
 
 /** @type import('eslint').Linter.BaseConfig */
 module.exports = {
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2018,
+    sourceType: "module",
+    project: "tsconfig.sandbox.json",
   },
   rules: {
-    "no-hoge": 2,
+    "no-hoge": "error",
+    "prefer-function-component-type": "error",
   },
 };
 ```

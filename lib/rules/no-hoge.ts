@@ -1,18 +1,21 @@
-import { Rule } from "eslint";
+import { createRule } from "../util";
 
-const rule: Rule.RuleModule = {
+export = createRule({
+  name: "no-hoge",
   meta: {
     docs: {
-      url:
-        "https://github.com/tyankatsu0105/eslint-plugin/blob/master/docs/rules/no-hoge.md",
       description: "'hoge' cannot be used in variable name",
+      category: "Stylistic Issues",
+      recommended: false,
     },
     fixable: "code",
     type: "problem",
     messages: {
       noHoge: "🤖piyoニシテクダサイ",
     },
+    schema: [],
   },
+  defaultOptions: [],
   create(context) {
     return {
       Identifier(node) {
@@ -35,6 +38,4 @@ const rule: Rule.RuleModule = {
       },
     };
   },
-};
-
-export = rule;
+});
