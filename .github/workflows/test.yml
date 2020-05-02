@@ -1,4 +1,4 @@
-name: Rules Test
+name: Test
 
 on:
   push:
