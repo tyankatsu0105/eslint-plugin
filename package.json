@@ -24,7 +24,7 @@
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
     "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
-    "playground": "eslint ./sandbox/**/*  --rulesdir dist/rules"
+    "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules"
   },
   "lint-staged": {
     "*.md": [
