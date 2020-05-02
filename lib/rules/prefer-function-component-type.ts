@@ -1,10 +1,22 @@
-import { createRule } from "../util";
+import { createRule, isFunctionComponentType } from "../util";
 
-export = createRule({
+type Options = {
+  prefer: string;
+};
+
+const defaultOptions: [Options] = [
+  {
+    prefer: "",
+  },
+];
+
+type MessageIds = "preferFunctionComponentType";
+
+export = createRule<[Options], MessageIds>({
   name: "prefer-function-component-type",
   meta: {
     docs: {
-      description: "",
+      description: "Unify type for function comoponents",
       category: "Best Practices",
       recommended: false,
     },
@@ -12,27 +24,39 @@ export = createRule({
     type: "suggestion",
     messages: {
       preferFunctionComponentType:
-        "Prefer using React.FC instead of FunctionComponent",
+        "Prefer using {{ prefer }} instead of {{ name }}",
     },
-    schema: [],
+    schema: [
+      {
+        type: "object",
+        properties: {
+          prefer: {
+            type: "string",
+          },
+        },
+        required: ["prefer"],
+      },
+    ],
   },
-  defaultOptions: [],
+  defaultOptions,
   create(context) {
     return {
-      Identifier(node) {
-        if (node.type !== "Identifier") {
+      TSTypeReference(node) {
+        if (node.typeName.type !== "Identifier") {
           return;
         }
-        if (node.name !== "hoge") {
-          return;
-        }
-        if ((node.loc !== undefined, node.loc !== null)) {
+
+        if (isFunctionComponentType(node.typeName.name)) {
           context.report({
             node,
             loc: node.loc,
             messageId: "preferFunctionComponentType",
+            data: {
+              prefer: context.options[0].prefer,
+              name: node.typeName.name,
+            },
             fix(fixer) {
-              return fixer.replaceText(node, "piyo");
+              return fixer.replaceText(node, context.options[0].prefer);
             },
           });
         }
