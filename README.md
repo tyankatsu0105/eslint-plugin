@@ -12,10 +12,21 @@ npm i -D @tyankatsu0105/eslint-plugin
 module.exports = {
   plugins: ["@tyankatsu0105"],
   rules: {
-    "@tyankatsu0105/no-hoge": 2,
+    "@tyankatsu0105/prefer-function-component-type": [
+      "error",
+      { prefer: "React.FC" },
+    ],
   },
 };
 ```
+
+### Rules
+
+[Docs](https://github.com/tyankatsu0105/eslint-plugin/tree/master/docs/rules)
+
+### Configs
+
+[Readme](https://github.com/tyankatsu0105/eslint-plugin/tree/master/lib/configs/README.md)
 
 > If you want to know about how to use scoped ESLint plugin, see: https://github.com/eslint/eslint/issues/9903
 
@@ -31,15 +42,7 @@ module.exports = {
 
 If you want to check eslint error, make these files in the `sandbox` dir.
 
-```js
-// index.js
-
-"use strict";
-
-const hoge = "aaa";
-```
-
-```ts
+```tsx
 // index.tsx
 
 import * as React, { FunctionComponent } from "react";
@@ -59,8 +62,7 @@ module.exports = {
     project: "tsconfig.sandbox.json",
   },
   rules: {
-    "no-hoge": "error",
-    "prefer-function-component-type": "error",
+    "prefer-function-component-type": ["error", { prefer: "React.FC" }],
   },
 };
 ```
