@@ -1,6 +1,6 @@
 {
   "name": "@tyankatsu0105/eslint-plugin",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "description": "ESLint rules with typescript",
   "keywords": [],
   "homepage": "https://github.com/tyankatsu0105/eslint-plugin#readme",
@@ -19,12 +19,14 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.production.json",
-    "precommit": "lint-staged",
+    "build:test": "npx tsc --project ./tsconfig.production.json --noEmit",
+    "precommit": "run-s build:test lint-staged",
     "commit": "git-cz",
+    "lint-staged": "lint-staged",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
-    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
-    "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules"
+    "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules",
+    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts"
   },
   "lint-staged": {
     "*.md": [
@@ -39,6 +41,10 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "dependencies": {
+    "@typescript-eslint/experimental-utils": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0"
+  },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^13.0.0",
     "@types/chai": "^4.2.11",
@@ -51,6 +57,7 @@
     "eslint": "^6.8.0",
     "lint-staged": "^10.1.7",
     "mocha": "^7.1.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "shipjs": "0.18.2",
@@ -59,9 +66,5 @@
   },
   "engines": {
     "node": "^10.13.0 || ^12.13.0 || >=14.0.0"
-  },
-  "dependencies": {
-    "@typescript-eslint/experimental-utils": "^2.30.0",
-    "@typescript-eslint/parser": "^2.30.0"
   }
 }

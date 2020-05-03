@@ -1,3 +1,17 @@
+# [0.11.0](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.10.2...v0.11.0) (2020-05-03)
+
+
+### Bug Fixes
+
+* fix url ([#18](https://github.com/tyankatsu0105/eslint-plugin/issues/18)) thanks [@tyankatsu0105](https://github.com/tyankatsu0105) ([77337eb](https://github.com/tyankatsu0105/eslint-plugin/commit/77337eb09a6cb9232b0914af98a88f93f412e9f8))
+
+
+### Features
+
+* **rule:** add prefer-function-component-type ([#21](https://github.com/tyankatsu0105/eslint-plugin/issues/21)) ([9bc535c](https://github.com/tyankatsu0105/eslint-plugin/commit/9bc535c8331c5a9f3d4492d94d4a61d3d4cf61bc))
+
+
+
 ## [0.10.2](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.10.1...v0.10.2) (2020-04-29)
 
 
