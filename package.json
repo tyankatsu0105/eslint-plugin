@@ -1,6 +1,6 @@
 {
   "name": "@tyankatsu0105/eslint-plugin",
-  "version": "0.10.3",
+  "version": "0.11.0",
   "description": "ESLint rules with typescript",
   "keywords": [],
   "homepage": "https://github.com/tyankatsu0105/eslint-plugin#readme",
@@ -23,8 +23,8 @@
     "commit": "git-cz",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
-    "test": "mocha --require ts-node/register \"tests/**/*.ts\"",
-    "playground": "eslint ./sandbox/index.js  --rulesdir dist/rules"
+    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
+    "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules"
   },
   "lint-staged": {
     "*.md": [
@@ -41,20 +41,27 @@
   },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^13.0.0",
+    "@types/chai": "^4.2.11",
     "@types/eslint": "^6.8.0",
-    "@types/estree": "0.0.44",
     "@types/mocha": "^7.0.2",
+    "@types/react": "^16.9.34",
+    "chai": "^4.2.0",
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
     "lint-staged": "^10.1.7",
     "mocha": "^7.1.2",
     "prettier": "^2.0.5",
+    "react": "^16.13.1",
     "shipjs": "0.18.2",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
   },
   "engines": {
     "node": "^10.13.0 || ^12.13.0 || >=14.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/experimental-utils": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0"
   }
 }

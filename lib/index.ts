@@ -1,5 +1,9 @@
-module.exports = {
-  rules: {
-    "no-hoge": require("./rules/no-hoge"),
-  },
-};
+import { createLibIndex } from "./util";
+
+import { rules } from "./rules";
+import { configs } from "./configs";
+
+export = createLibIndex({
+  rules,
+  configs,
+});
