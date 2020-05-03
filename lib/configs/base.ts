@@ -5,4 +5,4 @@ export = {
   ecmaFeatures: {
     jsx: true,
   },
-} as const;
+};

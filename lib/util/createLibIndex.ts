@@ -1,8 +1,7 @@
-import { ESLintUtils, TSESLint } from "@typescript-eslint/experimental-utils";
+import { ESLintUtils } from "@typescript-eslint/experimental-utils";
 type Rule = ReturnType<ReturnType<typeof ESLintUtils.RuleCreator>>;
-type Config = TSESLint.Linter.Config;
 
-// @todo add type to processors and configs
+// @todo add type to environments, processors and configs
 type CreateLibIndex = {
   rules?: {
     [k: string]: Rule;
@@ -14,7 +13,7 @@ type CreateLibIndex = {
     [k: string]: any;
   };
   configs?: {
-    [k: string]: Config;
+    [k: string]: any;
   };
 };
 export const createLibIndex = ({
