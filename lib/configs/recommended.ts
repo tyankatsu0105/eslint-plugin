@@ -6,4 +6,4 @@ export = {
       { prefer: "React.FC" },
     ],
   },
-} as const;
+};
