@@ -23,8 +23,8 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
-    "build:test": "npx tsc --project ./tsconfig.build.json --noEmit",
-    "precommit": "run-s build:test docs:update lint-staged",
+    "typecheck": "npx tsc --project ./tsconfig.build.json --noEmit",
+    "precommit": "lint-staged",
     "commit": "git-cz",
     "lint-staged": "lint-staged",
     "release:prepare": "shipjs prepare",
@@ -64,7 +64,6 @@
     "hygen": "^5.0.3",
     "lint-staged": "^10.1.7",
     "mocha": "^7.1.2",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "shipjs": "0.18.2",
