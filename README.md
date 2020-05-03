@@ -10,6 +10,10 @@ npm i -D @tyankatsu0105/eslint-plugin
 
 ```js
 module.exports = {
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    sourceType: "module",
+  },
   plugins: ["@tyankatsu0105"],
   rules: {
     "@tyankatsu0105/prefer-function-component-type": [
@@ -57,7 +61,6 @@ export const App: FunctionComponent = () => <div>aaa</div>;
 module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2018,
     sourceType: "module",
     project: "tsconfig.sandbox.json",
   },
