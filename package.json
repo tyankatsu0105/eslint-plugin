@@ -2,7 +2,11 @@
   "name": "@tyankatsu0105/eslint-plugin",
   "version": "0.11.2",
   "description": "ESLint rules for TypeScript with TypeScript",
-  "keywords": ["eslint", "eslintplugin", "typescript"],
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "typescript"
+  ],
   "homepage": "https://github.com/tyankatsu0105/eslint-plugin#readme",
   "bugs": {
     "url": "https://github.com/tyankatsu0105/eslint-plugin/issues"
@@ -26,7 +30,8 @@
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
     "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules",
-    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts"
+    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
+    "gen:sandbox": "hygen generate sandbox"
   },
   "lint-staged": {
     "*.md": [
@@ -55,6 +60,7 @@
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
+    "hygen": "^5.0.3",
     "lint-staged": "^10.1.7",
     "mocha": "^7.1.2",
     "npm-run-all": "^4.1.5",

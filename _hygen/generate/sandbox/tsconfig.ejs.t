@@ -1,3 +1,6 @@
+---
+to: sandbox/tsconfig.json
+---
 {
   "compilerOptions": {
     /* Basic Options */

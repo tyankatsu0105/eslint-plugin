@@ -45,32 +45,16 @@ module.exports = {
 - develop => Development branch (default)
 - topic branches => From develop branch
 
-### playground
+### sandbox
 
-If you want to check eslint error, make these files in the `sandbox` dir.
+If you want to check eslint error, make files in the `sandbox` dir.
 
-```tsx
-// index.tsx
+```bash
+# make files
+npm run gen:sandbox
 
-import * as React, { FunctionComponent } from "react";
-
-export const App: FunctionComponent = () => <div>aaa</div>;
-```
-
-```js
-// .eslintrc.js
-
-/** @type import('eslint').Linter.BaseConfig */
-module.exports = {
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    sourceType: "module",
-    project: "tsconfig.sandbox.json",
-  },
-  rules: {
-    "prefer-function-component-type": ["error", { prefer: "React.FC" }],
-  },
-};
+# run eslint for sandbox dir
+npm run sandbox
 ```
 
 ## Inspired by these
