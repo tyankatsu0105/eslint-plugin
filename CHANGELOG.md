@@ -1,3 +1,7 @@
+## [0.11.2](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.11.1...v0.11.2) (2020-05-03)
+
+
+
 ## [0.11.1](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.10.3...v0.11.1) (2020-05-03)
 
 
