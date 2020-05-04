@@ -44,3 +44,4 @@ jobs:
             Please run `npm run docs-update:rules`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: 'true'
+        run: exit 1
