@@ -1,0 +1,30 @@
+name: Check Docs
+
+on: push
+
+jobs:
+  checkDocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          registry-url: "https://registry.npmjs.org"
+          node-version: '12.x'
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Check Rules Docs
+        run: npm run docs-update:rules

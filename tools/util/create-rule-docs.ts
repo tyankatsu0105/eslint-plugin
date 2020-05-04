@@ -1,4 +1,5 @@
 import { RuleMetaData } from "./types";
+import { formatMarkdown } from "./format-markdown";
 
 const createIntro = (length: number) => `
 ## Rules list
@@ -33,5 +34,5 @@ export const createRuleDocs = (rulesMetaData: RuleMetaData[]) => {
 
   doc.push(createRulesSection(rulesMetaData));
 
-  return { doc: doc.join("") };
+  return { doc: formatMarkdown(doc.join("")) };
 };
