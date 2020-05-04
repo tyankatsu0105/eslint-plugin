@@ -41,7 +41,6 @@ jobs:
         uses: mshick/add-pr-comment@v1
         with:
           message: |
-            There is a diff
             Please run `npm run docs-update:rules`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: 'true'
