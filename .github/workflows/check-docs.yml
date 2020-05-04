@@ -29,19 +29,15 @@ jobs:
       - name: Update Rules Docs
         run: npm run docs-update:rules
 
-      - name: Check
-        id: check
+      - name: Check diff
+        id: check-diff
         run: |
           echo ::set-output name=diff-files::$(git diff --diff-filter=AM --name-only)
-
-      - name: confirm
-        run: |
-          echo ${{steps.check.outputs.diff-files}}
 
       - name: Report about rules
         env:
           DOCS_PATH: 'docs/rules/README.md'
-        if: contains(steps.check.outputs.diff-files, env.DOCS_PATH)
+        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_PATH)
         uses: mshick/add-pr-comment@v1
         with:
           message: |
