@@ -5,8 +5,6 @@ on: push
 jobs:
   checkDocs:
     runs-on: ubuntu-latest
-    env:
-      DOCS_RULES: 'docs/rules/README.md'
 
     steps:
       - uses: actions/checkout@v2
@@ -38,10 +36,12 @@ jobs:
 
       - name: confirm
         run: |
-          echo ${{steps.check.diff-files}}
+          echo ${{steps.check.outputs.diff-files}}
 
       - name: Report about rules
-        if: contains(steps.check.diff-files, env.DOCS_RULES)
+        env:
+          DOCS_PATH: 'docs/rules/README.md'
+        if: contains(steps.check.outputs.diff-files, env.DOCS_PATH)
         uses: mshick/add-pr-comment@v1
         with:
           message: |
