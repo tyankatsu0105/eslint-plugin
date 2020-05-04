@@ -1,5 +1,4 @@
-import { ESLintUtils } from "@typescript-eslint/experimental-utils";
-type Rule = ReturnType<ReturnType<typeof ESLintUtils.RuleCreator>>;
+import { Rule } from "./types";
 
 // @todo add type to environments, processors and configs
 type CreateLibIndex = {

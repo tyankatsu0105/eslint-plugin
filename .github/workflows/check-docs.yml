@@ -1,0 +1,51 @@
+name: Check Docs
+
+on: push
+
+jobs:
+  checkDocs:
+    runs-on: ubuntu-latest
+
+    env:
+      DOCS_RULES: 'docs/rules/README.md'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          registry-url: "https://registry.npmjs.org"
+          node-version: '12.x'
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Update Rules Docs
+        run: npm run docs-update:rules
+
+      - name: Check diff
+        id: check-diff
+        run: |
+          echo ::set-output name=diff-files::$(git diff --diff-filter=AM --name-only)
+
+      - name: Report about rules
+        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_RULES)
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            Please run `docs-update:rules`
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: 'true'
+
+      - name: Exit
+        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_RULES)
+        run: exit 1

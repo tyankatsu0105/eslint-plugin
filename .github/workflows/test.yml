@@ -1,12 +1,6 @@
 name: Test
 
-on:
-  push:
-    paths:
-      - 'lib/**'
-      - 'tests/**'
-      - 'package.json'
-      - '.github/workflows/test.yml'
+on: push
 
 jobs:
   test:
@@ -38,3 +32,6 @@ jobs:
 
       - name: Test
         run: npm run test
+
+      - name: Typecheck
+        run: npm run typecheck
