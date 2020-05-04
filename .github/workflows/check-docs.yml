@@ -35,7 +35,7 @@ jobs:
             docs
 
       - name: Report
-        if: env.GIT_DIFF = 'docs/rules/README.md'
+        if: env.GIT_DIFF == 'docs/rules/README.md'
         uses: mshick/add-pr-comment@v1
         with:
           message: |
