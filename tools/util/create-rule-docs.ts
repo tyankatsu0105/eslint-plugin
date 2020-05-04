@@ -9,7 +9,7 @@ You can use ${length} rules.
 const createRulesSection = (rulesMetaData: RuleMetaData[]) => {
   const tableHeader = `
 |Rule ID|Description|Fixable|
-| :--- | :--- | :--- |`;
+| :--- | :--- | :---: |`;
 
   const rulesTable = rulesMetaData
     .map((ruleMetaData) => {
