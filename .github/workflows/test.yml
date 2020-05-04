@@ -1,12 +1,6 @@
 name: Test
 
-on:
-  push:
-    paths:
-      - 'lib/**'
-      - 'tests/**'
-      - 'package.json'
-      - '.github/workflows/test.yml'
+on: [push, pull_request]
 
 jobs:
   test:

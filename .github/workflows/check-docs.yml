@@ -1,6 +1,6 @@
 name: Check Docs
 
-on: push
+on: [push, pull_request]
 
 jobs:
   checkDocs:
@@ -26,5 +26,19 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Check Rules Docs
+      - name: Update Rules Docs
         run: npm run docs-update:rules
+
+      - uses: technote-space/get-diff-action@v1
+        with:
+          PREFIX_FILTER: |
+            docs
+
+      - name: Report
+        if: env.GIT_DIFF === 'docs/rules/README.md'
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            Please run `npm run docs-update:rules`
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: 'true'
