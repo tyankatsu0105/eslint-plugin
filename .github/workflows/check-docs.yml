@@ -6,6 +6,9 @@ jobs:
   checkDocs:
     runs-on: ubuntu-latest
 
+    env:
+      DOCS_RULES: 'docs/rules/README.md'
+
     steps:
       - uses: actions/checkout@v2
 
@@ -35,13 +38,14 @@ jobs:
           echo ::set-output name=diff-files::$(git diff --diff-filter=AM --name-only)
 
       - name: Report about rules
-        env:
-          DOCS_PATH: 'docs/rules/README.md'
-        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_PATH)
+        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_RULES)
         uses: mshick/add-pr-comment@v1
         with:
           message: |
             Please run `npm run docs-update:rules`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: 'true'
+
+      - name: Exit
+        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_RULES)
         run: exit 1
