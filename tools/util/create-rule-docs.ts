@@ -1,11 +1,11 @@
 import { RuleMetaData } from "./types";
 
 const createIntro = (length: number) => `
+## Rules list
 You can use ${length} rules.
 `;
-const createRulesSection = (rulesMetaData: RuleMetaData[]) => {
-  const heading = "## Rules list";
 
+const createRulesSection = (rulesMetaData: RuleMetaData[]) => {
   const tableHeader = `
 |Rule ID|Description|Fixable|
 | :--- | :--- | :--- |`;
@@ -22,7 +22,6 @@ const createRulesSection = (rulesMetaData: RuleMetaData[]) => {
     .join("");
 
   return `
-  ${heading}
   ${tableHeader}
   ${rulesTable}
   `;
