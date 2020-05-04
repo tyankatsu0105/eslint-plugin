@@ -5,6 +5,8 @@ on: push
 jobs:
   checkDocs:
     runs-on: ubuntu-latest
+    env:
+      DOCS_RULES: 'docs/rules/README.md'
 
     steps:
       - uses: actions/checkout@v2
@@ -35,10 +37,11 @@ jobs:
             docs
 
       - name: Report
-        if: env.GIT_DIFF
+        if: contains(env.GIT_DIFF, env.DOCS_RULES)
         uses: mshick/add-pr-comment@v1
         with:
           message: |
+            There is a diff
             Please run `npm run docs-update:rules`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: 'true'
