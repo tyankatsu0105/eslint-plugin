@@ -37,7 +37,7 @@ jobs:
           echo ::set-output name=diff-files::git diff --diff-filter=AM --name-only
 
       - name: Report ${{env.DOCS_RULES}}
-        if: contains(step.check.diff-files, env.DOCS_RULES)
+        if: contains(steps.check.diff-files, env.DOCS_RULES)
         uses: mshick/add-pr-comment@v1
         with:
           message: |
