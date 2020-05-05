@@ -33,8 +33,7 @@
     "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
     "gen:sandbox": "hygen generate sandbox",
     "gen:rule": "hygen generate rule",
-    "docs-update:rules": "ts-node tools/update-rules-docs.ts",
-    "list-update:rules": "ts-node tools/update-rules-list.ts"
+    "update": "ts-node tools/update.ts"
   },
   "lint-staged": {
     "*.md": [

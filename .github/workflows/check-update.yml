@@ -1,13 +1,10 @@
-name: Check Docs
+name: Check Update
 
 on: push
 
 jobs:
   checkDocs:
     runs-on: ubuntu-latest
-
-    env:
-      DOCS_RULES: 'docs/rules/README.md'
 
     steps:
       - uses: actions/checkout@v2
@@ -30,19 +27,19 @@ jobs:
         run: npm ci
 
       - name: Update Rules Docs
-        run: npm run docs-update:rules
+        run: npm run update
 
       - name: Check diff
         id: check-diff
         run: |
           echo ::set-output name=diff-files::$(git diff --diff-filter=AM --name-only)
 
-      - name: Report about rules
-        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_RULES)
+      - name: Report
+        if: steps.check-diff.outputs.diff-files
         uses: mshick/add-pr-comment@v1
         with:
           message: |
-            Please run `docs-update:rules`
+            Please run `update`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: 'true'
 

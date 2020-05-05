@@ -3,7 +3,7 @@ import { RuleMetaData } from "./types";
 import { formatMarkdown } from "./format-markdown";
 
 const createIntro = (length: number) => `
-<!-- This file has been automatically generated, in order to update it's content execute "npm run docs-update:rules" -->
+<!-- This file has been automatically generated, in order to update it's content execute "npm run update" -->
 ## Rules list
 You can use ${length} rules.
 `;
