@@ -1,11 +1,14 @@
 # @tyankatsu0105/eslint-plugin
 
-Create ESLint rules with TypeScript
+[![npm version](https://badge.fury.io/js/%40tyankatsu0105%2Feslint-plugin.svg)](https://badge.fury.io/js/%40tyankatsu0105%2Feslint-plugin)
+[![deploy](https://img.shields.io/badge/deploy-🛳%20Ship.js-blue?style=flat)](https://github.com/algolia/shipjs)
+
+ESLint rules for TypeScript with TypeScript.
 
 ## Usage
 
 ```bash
-npm i -D @tyankatsu0105/eslint-plugin
+npm i -D eslint @tyankatsu0105/eslint-plugin
 ```
 
 ```js
@@ -42,37 +45,22 @@ module.exports = {
 - develop => Development branch (default)
 - topic branches => From develop branch
 
-### playground
+### sandbox
 
-If you want to check eslint error, make these files in the `sandbox` dir.
+If you want to check eslint error, make files in the `sandbox` dir.
 
-```tsx
-// index.tsx
+```bash
+# make files
+npm run gen:sandbox
 
-import * as React, { FunctionComponent } from "react";
-
-export const App: FunctionComponent = () => <div>aaa</div>;
-```
-
-```js
-// .eslintrc.js
-
-/** @type import('eslint').Linter.BaseConfig */
-module.exports = {
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    sourceType: "module",
-    project: "tsconfig.sandbox.json",
-  },
-  rules: {
-    "prefer-function-component-type": ["error", { prefer: "React.FC" }],
-  },
-};
+# run eslint for sandbox dir
+npm run sandbox
 ```
 
 ## Inspired by these
 
 - https://github.com/future-architect/eslint-plugin-vue-scoped-css
+- https://github.com/typescript-eslint/typescript-eslint
 
 ## LICENSE (MIT)
 

@@ -1,7 +1,8 @@
 /** @type import('eslint').Linter.BaseConfig */
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
+    project: "tsconfig.json",
   },
   extends: [
     "plugin:@mysticatea/es2018",

@@ -5,5 +5,6 @@ export = {
       "error",
       { prefer: "React.FC" },
     ],
+    "@tyankatsu0105/use-name-space-import": ["error", { modules: "react" }],
   },
 };
