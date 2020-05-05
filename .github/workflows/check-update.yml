@@ -39,7 +39,7 @@ jobs:
         uses: mshick/add-pr-comment@v1
         with:
           message: |
-            Please run `update`
+            Please run `npm run update`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: 'true'
 
