@@ -32,7 +32,8 @@
     "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules",
     "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
     "gen:sandbox": "hygen generate sandbox",
-    "docs-update:rules": "ts-node tools/update-rules-docs.ts"
+    "gen:rule": "hygen generate rule",
+    "update": "ts-node tools/update.ts"
   },
   "lint-staged": {
     "*.md": [
@@ -59,6 +60,7 @@
     "@types/prettier": "^2.0.0",
     "@types/react": "^16.9.34",
     "chai": "^4.2.0",
+    "change-case": "^4.1.1",
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
