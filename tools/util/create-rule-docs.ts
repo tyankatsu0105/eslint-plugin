@@ -1,7 +1,9 @@
+import { NAME_SPACE } from "./const";
 import { RuleMetaData } from "./types";
 import { formatMarkdown } from "./format-markdown";
 
 const createIntro = (length: number) => `
+<!-- This file has been automatically generated, in order to update it's content execute "npm run docs-update:rules" -->
 ## Rules list
 You can use ${length} rules.
 `;
@@ -18,7 +20,7 @@ const createRulesSection = (rulesMetaData: RuleMetaData[]) => {
       const description = ruleMetaData.meta.docs?.description;
       const fixable = ruleMetaData.meta.fixable ? ":wrench:" : "";
 
-      return `|[${name}](${url})|${description}|${fixable}|\n`;
+      return `|[${NAME_SPACE}/${name}](${url})|${description}|${fixable}|\n`;
     })
     .join("");
 

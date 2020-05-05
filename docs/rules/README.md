@@ -1,3 +1,5 @@
+<!-- This file has been automatically generated, in order to update it's content execute "npm run docs-update:rules" -->
+
 ## Rules list
 
 You can use 1 rules.
