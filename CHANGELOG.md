@@ -1,3 +1,13 @@
+# [0.12.0](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.11.1...v0.12.0) (2020-05-05)
+
+
+### Features
+
+* **use-name-space-import:** add rule use name space import ([#31](https://github.com/tyankatsu0105/eslint-plugin/issues/31)) ([0e5dcef](https://github.com/tyankatsu0105/eslint-plugin/commit/0e5dcef99c9d31ee0704d11a094b501258ef01a5))
+* add generate-rules-docs ([54afd79](https://github.com/tyankatsu0105/eslint-plugin/commit/54afd79ba6e71c2c8222c9392b631bac36b117f0))
+
+
+
 ## [0.11.2](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.11.1...v0.11.2) (2020-05-03)
 
 
