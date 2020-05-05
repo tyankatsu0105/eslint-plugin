@@ -44,5 +44,5 @@ jobs:
           allow-repeats: 'true'
 
       - name: Exit
-        if: contains(steps.check-diff.outputs.diff-files, env.DOCS_RULES)
+        if: steps.check-diff.outputs.diff-files
         run: exit 1
