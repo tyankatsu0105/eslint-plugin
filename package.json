@@ -23,16 +23,16 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
-    "typecheck": "npx tsc --project ./tsconfig.build.json --noEmit",
     "precommit": "lint-staged",
     "commit": "git-cz",
+    "gen:rule": "hygen generate rule",
+    "gen:sandbox": "hygen generate sandbox",
     "lint-staged": "lint-staged",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
     "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules",
     "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
-    "gen:sandbox": "hygen generate sandbox",
-    "gen:rule": "hygen generate rule",
+    "typecheck": "npx tsc --project ./tsconfig.build.json --noEmit",
     "update": "ts-node tools/update.ts"
   },
   "lint-staged": {
@@ -41,6 +41,9 @@
     ],
     "*.{js,ts}": [
       "eslint --fix"
+    ],
+    "package.json": [
+      "npx sort-package-json"
     ]
   },
   "config": {
@@ -49,8 +52,8 @@
     }
   },
   "dependencies": {
-    "@typescript-eslint/experimental-utils": "^2.30.0",
-    "@typescript-eslint/parser": "^2.30.0"
+    "@typescript-eslint/experimental-utils": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0"
   },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^13.0.0",
@@ -61,17 +64,20 @@
     "@types/react": "^16.9.34",
     "chai": "^4.2.0",
     "change-case": "^4.1.1",
-    "commitizen": "^4.0.4",
-    "cz-conventional-changelog": "^3.1.0",
-    "eslint": "^6.8.0",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.0.0",
     "hygen": "^5.0.3",
-    "lint-staged": "^10.1.7",
+    "lint-staged": "^10.2.2",
     "mocha": "^7.1.2",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
-    "shipjs": "0.18.2",
-    "ts-node": "^8.9.1",
+    "shipjs": "^0.18.4",
+    "ts-node": "^8.10.1",
     "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "eslint": "^6.0.0 || >=7.0.0"
   },
   "engines": {
     "node": "^10.13.0 || ^12.13.0 || >=14.0.0"
