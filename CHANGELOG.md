@@ -1,3 +1,12 @@
+## [0.12.2](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.12.1...v0.12.2) (2020-05-10)
+
+
+### Bug Fixes
+
+* recommends option ([#36](https://github.com/tyankatsu0105/eslint-plugin/issues/36)) ([285be22](https://github.com/tyankatsu0105/eslint-plugin/commit/285be22ba0480a9e193a4ac9b935a72039229ba5))
+
+
+
 ## [0.12.1](https://github.com/tyankatsu0105/eslint-plugin/compare/v0.12.0...v0.12.1) (2020-05-06)
 
 
