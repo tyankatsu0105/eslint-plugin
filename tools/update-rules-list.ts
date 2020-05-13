@@ -8,5 +8,7 @@ export const updateRulesList = async () => {
   const { rulesMetaData } = await getRulesMetaData();
   const { list } = createRulesList(rulesMetaData);
 
-  fs.writeFileSync(rulesListPath, list);
+  if (list !== undefined) {
+    fs.writeFileSync(rulesListPath, list);
+  }
 };
