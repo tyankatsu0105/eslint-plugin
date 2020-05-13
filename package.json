@@ -1,6 +1,6 @@
 {
   "name": "@tyankatsu0105/eslint-plugin",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "description": "ESLint rules for TypeScript with TypeScript",
   "keywords": [
     "eslint",
