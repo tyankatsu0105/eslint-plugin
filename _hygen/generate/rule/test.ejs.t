@@ -1,12 +1,12 @@
 ---
 to: tests/lib/rules/<%= name %>.spec.ts
 ---
-import { RuleTester, resolveParser } from "../../RuleTester";
+import { RuleTester } from "../../util";
 
 import rule from "../../../lib/rules/<%= name %>";
 
 const tester = new RuleTester({
-  parser: resolveParser("@typescript-eslint/parser"),
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     sourceType: "module",
     ecmaFeatures: {
