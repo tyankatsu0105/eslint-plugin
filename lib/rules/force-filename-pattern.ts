@@ -1,20 +1,25 @@
 import { createRule } from "../util";
+import path from "path";
 
-const getFilenameExtensionName = (filenameFromEslint: string) => {
-  const splitedFilename = filenameFromEslint.split(".");
+const getExtensionName = (filenameFromEslint: string) => {
+  const extensionName = path.extname(filenameFromEslint).slice(1);
 
-  const extensionName = splitedFilename[splitedFilename.length - 1];
+  return { extensionName };
+};
+
+const extendedGetFilename = (filenameFromEslint: string) => {
+  const splitedFilename = path.basename(filenameFromEslint).split(".");
 
   const filename = splitedFilename
     .filter((_, index) => index !== splitedFilename.length - 1)
     .join(".");
 
-  return { extensionName, filename };
+  return { filename };
 };
 
 type Options = {
-  regex: string;
-  allowExtensionNames: string[];
+  regex?: string;
+  allowExtensionNames?: string[];
 };
 
 const defaultOptions: [Options] = [{ regex: "", allowExtensionNames: [] }];
@@ -56,9 +61,8 @@ export = createRule<[Options], MessageIds>({
   create(context, [{ regex, allowExtensionNames }]) {
     return {
       Program(node) {
-        const { filename, extensionName } = getFilenameExtensionName(
-          context.getFilename()
-        );
+        const { extensionName } = getExtensionName(context.getFilename());
+        const { filename } = extendedGetFilename(context.getFilename());
 
         if (
           regex &&
@@ -76,6 +80,7 @@ export = createRule<[Options], MessageIds>({
         }
 
         if (
+          allowExtensionNames &&
           allowExtensionNames.length > 0 &&
           !allowExtensionNames.includes(extensionName)
         ) {

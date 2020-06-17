@@ -17,7 +17,7 @@ const tester = new RuleTester({
 tester.run("force-filename-pattern", rule, {
   valid: [
     {
-      filename: "helper-library.ts",
+      filename: "helper-library.component.ts",
       code,
     },
     {
