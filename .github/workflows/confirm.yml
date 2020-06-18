@@ -4,7 +4,7 @@ on: [pull_request, push]
 
 jobs:
   confirm:
-    if: startsWith(github.head_ref, 'build')
+    if: startsWith(github.head_ref, 'release')
     runs-on: ubuntu-latest
     env: 
       BASE_BRANCH: ${{ github.base_ref }}
@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: |
-          echo this is build/hogehoge
+          echo this is release/hogehoge
