@@ -7,7 +7,7 @@ jobs:
     if: startsWith(github.head_ref, $RELEASE_PULL_REQUEST_BRANCH)
     runs-on: ubuntu-latest
     env: 
-      RELEASE_PULL_REQUEST_BRANCH: build # add
+      RELEASE_PULL_REQUEST_BRANCH: 'build' # add
 
     steps:
       - uses: actions/checkout@v2
