@@ -28,6 +28,7 @@
     "gen:rule": "hygen generate rule",
     "gen:sandbox": "hygen generate sandbox",
     "lint-staged": "lint-staged",
+    "release": "shipjs prepare",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
     "sandbox": "eslint ./sandbox/**/*  --rulesdir dist/rules",
@@ -72,7 +73,7 @@
     "mocha": "^8.0.1",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
-    "shipjs": "^0.19.0",
+    "shipjs": "0.20.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
   },

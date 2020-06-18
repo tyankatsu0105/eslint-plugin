@@ -1,39 +1,34 @@
-name: Release
-on:
-  push:
-    branches:
-      - master
+name: Ship js trigger
+on: 
+  pull_request:
+    types:
+      - closed
+# on:
+#   push:
+#     branches:
+#       - develop
+
 jobs:
-  release:
+  build:
     name: Release
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'releases/v') # add
+    
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
-          fetch-depth: 0
-          
-      - uses: actions/cache@v1
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
-
-      - name: Use Node.js 12
-        uses: actions/setup-node@v1
+          ref: develop
+      - uses: actions/setup-node@v1
         with:
           registry-url: "https://registry.npmjs.org"
-          node-version: '12.x'
-
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-      
-      - run: git fetch
-
-      - run: npm run release:trigger
+      - run: |
+          if [ -f "yarn.lock" ]; then
+            yarn install
+          else
+            npm install
+          fi
+      - run: npx shipjs trigger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          # SLACK_INCOMING_HOOK: ${{ secrets.SLACK_INCOMING_HOOK }}
