@@ -1,0 +1,20 @@
+name: Confirm
+
+on: pull_request
+
+jobs:
+  checkDocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: |
+          echo "github.base_ref is: ${BASE_BRANCH}"
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+
+      - run: |
+          echo "github.head_ref	is: ${HEAD_BRANCH}"
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
