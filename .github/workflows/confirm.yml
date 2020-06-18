@@ -4,11 +4,10 @@ on: [pull_request, push]
 
 jobs:
   confirm:
-    if: startsWith(github.head_ref, 'release')
+    if: startsWith(github.head_ref, RELEASE_PULL_REQUEST_BRANCH)
     runs-on: ubuntu-latest
     env: 
-      BASE_BRANCH: ${{ github.base_ref }}
-      HEAD_BRANCH: ${{ github.head_ref }}
+      RELEASE_PULL_REQUEST_BRANCH: build # add
 
     steps:
       - uses: actions/checkout@v2

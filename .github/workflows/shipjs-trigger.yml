@@ -7,8 +7,6 @@
 #     runs-on: ubuntu-latest
 #     if: 
 #     env: 
-#       BASE_BRANCH: ${{ github.base_ref }} # add
-#       HEAD_BRANCH: ${{ github.head_ref }} # add
 #       RELEASE_PULL_REQUEST_BRANCH: releases # add
 
 #     steps:
