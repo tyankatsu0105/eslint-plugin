@@ -4,7 +4,7 @@ on: [pull_request, push]
 
 jobs:
   confirm:
-    if: startsWith(github.head_ref, ${RELEASE_PULL_REQUEST_BRANCH})
+    if: startsWith(github.head_ref, $RELEASE_PULL_REQUEST_BRANCH)
     runs-on: ubuntu-latest
     env: 
       RELEASE_PULL_REQUEST_BRANCH: build # add
