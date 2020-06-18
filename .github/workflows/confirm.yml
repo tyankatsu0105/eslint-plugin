@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: |
-          echo Hi!!!!!!!!!!!
+          echo this is build/hogehoge
